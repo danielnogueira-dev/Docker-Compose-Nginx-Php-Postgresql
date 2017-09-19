@@ -1,16 +1,16 @@
 <?php
 
-$host     = "mysql"; // nome do container mysql
-$dbname   = "information_schema";
-$user     = "root";
-$password = "root";
+$host     = "postgresql"; // nome do container postgresql
+$dbname   = "teste";
+$user     = "default";
+$password = "secret";
 
-$pdo = new PDO("mysql:host={$host};dbname={$dbname}", $user, $password);
+$pdo = new PDO("pgsql:host={$host};dbname={$dbname}", $user, $password);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$sql = "SELECT * FROM INNODB_METRICS limit 3;";
+$sql = "SELECT * FROM pessoa;";
 $consulta = $pdo->query($sql);
-$linha = $consulta->fetch(PDO::FETCH_ASSOC);
-echo "api.dev TESTE BD MYSQL<br><br>";
+$linha = $consulta->fetchAll(PDO::FETCH_ASSOC);
+echo "api.dev TESTE BD POSTGRESQL<br><br>";
 print_r($linha);
 
 ?>

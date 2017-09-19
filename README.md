@@ -101,3 +101,13 @@ Docker utilizando o compose, arquivo de configuração com variáveis de ambient
 	\connect teste;
 	
 	\dt;
+	
+	CREATE TABLE pessoa (id serial primary key, nome varchar(60) not null);
+	
+	INSERT INTO pessoa(nome) VALUES ('maria');
+
+	INSERT INTO pessoa(nome) VALUES ('joao');
+
+	INSERT INTO pessoa(nome) VALUES ('julia');
+
+	INSERT INTO pessoa(nome) VALUES ('pedro');
